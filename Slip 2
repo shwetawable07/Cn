@@ -1,0 +1,72 @@
+Q1 (A) 
+
+
+a) Switch vs Router-
+Switch: Connects devices in LAN
+Router: Connects different networks
+
+b) Hosts in /26-
+Hosts = 2^(32-26) = 64
+Usable = 62
+
+c) Cat5e vs Cat6 vs Cat7-
+Cat5e: 1 Gbps
+Cat6: 10 Gbps (short distance)
+Cat7: Higher shielding, faster speed
+
+d) Phishing email steps-
+Check sender email
+Look for suspicious links
+Avoid unknown attachments
+Check spelling errors
+
+f) Malware analysis methods-
+Static analysis
+Dynamic analysis
+
+Ping command use-
+Used to test connectivity between two devices.
+
+
+
+Q2 (B) Simple Hash Simulation (C Program)
+
+#include <stdio.h>
+int main() {
+    int hash[10] = {0}, key, index;
+    for(int i=0; i<5; i++) {
+        printf("Enter value: ");
+        scanf("%d", &key);
+        index = key % 10;
+        hash[index] = key;
+    }
+
+    printf("Hash Table:\n");
+    for(int i=0; i<10; i++) {
+        printf("%d -> %d\n", i, hash[i]);
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
