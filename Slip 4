@@ -1,0 +1,67 @@
+Q1 (A) Any 5
+
+a) Cyber Attack-
+A cyber attack is an attempt to damage, steal, or access data illegally.
+Types:-
+Phishing
+Malware
+DoS
+Man-in-the-middle
+
+b) Release/Renew IP (DHCP)-
+ipconfig /release
+ipconfig /renew
+
+c) Supernetting-
+Combining multiple networks into one larger network.
+Example:-
+192.168.0.0/24 + 192.168.1.0/24 → 192.168.0.0/23
+
+d) John the Ripper-
+Tool used to crack passwords using dictionary or brute-force attack.
+
+f) copy running-config startup-config-
+Saves current router configuration permanently.
+
+g) Loopback IP-
+Used for testing network internally.
+Range: 127.0.0.0 – 127.255.255.255
+
+Q2 (B) Email Phishing Detection (C Program)
+
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char email[200];
+    printf("Enter email content: ");
+    fgets(email, sizeof(email), stdin);
+    if(strstr(email, "urgent") || strstr(email, "password") || strstr(email, "click")) {
+        printf("Phishing Email Detected!\n");
+    } else {
+        printf("Safe Email\n");
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
