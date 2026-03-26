@@ -1,0 +1,65 @@
+Question Q1 (A) Any 5
+
+a) tracert / traceroute-
+It shows the path (route) taken by packets from source to destination and displays each hop (router).
+
+b) ip addr vs ifconfig-
+ip addr: Modern command, more powerful (Linux recommended)
+ifconfig: Older command, limited features
+
+c) nslookup-
+Used to query DNS to find IP address of a domain name.
+
+d) Dynamic IP (DHCP)-
+Advantages:-
+Automatic IP assignment
+Easy network management
+Disadvantages:-
+IP may change
+Less control/security
+
+f) Switch function-
+A switch connects devices in a LAN and forwards data using MAC addresses.
+
+g) Network topology-
+It is the layout/structure of a network (e.g., star, bus).
+Applications: LAN design, network planning, troubleshooting
+
+
+Q2 (B) Bus Topology (C Program)
+
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter number of nodes: ");
+    scanf("%d", &n);
+    printf("\nBus Topology Representation:\n");
+    for(int i=1; i<=n; i++) {
+        printf("[PC%d]", i);
+        if(i != n)
+            printf(" -- ");
+    }
+    printf("\n(All nodes connected to single backbone cable)\n");
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
