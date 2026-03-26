@@ -1,0 +1,60 @@
+Question 1-A
+a) Modem purpose-
+A modem converts digital data into analog signals and vice versa to enable internet communication. Without a modem, direct internet connection is not possible in traditional networks.
+
+b) MAC vs IP Address-
+MAC Address: Physical address, fixed, used in LAN
+IP Address: Logical address, changeable, used for global communication
+
+c) Loopback IP-
+A loopback IP is used to test the network stack.
+Range: 127.0.0.0 to 127.255.255.255 (commonly 127.0.0.1)
+
+d) Static IP command (Linux)-
+ifconfig eth0 192.168.1.10 netmask 255.255.255.0 up
+
+f) Password strength tool-
+Example: zxcvbn or online password checker tools
+
+g) Nmap scan for open ports-
+nmap -p- 192.168.1.1
+
+
+Q2-B-A
+
+#include <stdio.h>
+#include <string.h>
+void charStuffing(char data[]) {
+    printf("Character Stuffing Output: DLE STX ");
+    for(int i=0; i<strlen(data); i++) {
+        if(data[i]=='D')
+            printf("DLE ");
+        printf("%c ", data[i]);
+    }
+    printf("DLE ETX\n");
+}
+void bitStuffing(char data[]) {
+    int count=0;
+    printf("Bit Stuffing Output: ");
+    for(int i=0; i<strlen(data); i++) {
+        printf("%c", data[i]);
+        if(data[i]=='1') {
+            count++;
+            if(count==5) {
+                printf("0");
+                count=0;
+            }
+        } else {
+            count=0;
+        }
+    }
+}
+int main() {
+    char data[50];
+    printf("Enter data: ");
+    scanf("%s", data);
+
+    charStuffing(data);
+    bitStuffing(data);
+    return 0;
+}
