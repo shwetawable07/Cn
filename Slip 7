@@ -1,0 +1,90 @@
+Q1 (A) – Short Answers
+
+a) Difference between ping and traceroute
+Feature-  	ping	                       traceroute
+Purpose-  	Checks connectivity	         Finds path (route)
+Output-    	Success/failure + delay	     Each hop (router)
+Protocol- 	ICMP	                       ICMP/UDP
+Use-       	Basic check	                  Network troubleshooting
+
+b) Steps to identify a phishing email
+Check sender email (fake domain)
+Look for spelling/grammar mistakes
+Avoid clicking unknown links
+Check URL before clicking
+Look for urgency (“urgent action required”)
+Avoid downloading attachments
+Verify from official source
+
+c) Function of a switch
+Connects devices in LAN
+Uses MAC address to forward data
+Reduces network collisions
+Improves performance (compared to hub)
+
+d) 64-bit WEP key
+Requires 10 hexadecimal digits
+Examples:
+A1B2C3D4E5
+1234567890
+ABCDEF1234
+1A2B3C4D5E
+FFFFFFFFFF
+
+f) Banner MOTD (Message of the Day)
+Displays a message before login
+Used for:
+Security warning (unauthorized access prohibited)
+Legal notice (acts as evidence)
+
+g) Dummy phishing email + indicators
+Example Email:
+Subject: Urgent! Your Bank Account Will Be Blocked
+Dear Customer,
+Your account will be blocked within 24 hours.
+Click here to verify: http://fake-bank-login.com
+Thank you,
+Bank Team
+Indicators:
+Generic greeting (“Dear Customer”)
+Fake/unknown URL
+Urgent threat message
+Not from official email
+Suspicious link
+
+
+ Q2 (B) – Option 1: Mesh Topology (C Program)
+
+#include <stdio.h>
+int main() {
+    int n, i, j;
+    printf("Enter number of nodes: ");
+    scanf("%d", &n);
+    printf("\nMesh Topology Connections:\n");
+    for(i = 1; i <= n; i++) {
+        for(j = i + 1; j <= n; j++) {
+            printf("Node %d <--> Node %d\n", i, j);
+        }
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
