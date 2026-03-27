@@ -1,0 +1,79 @@
+Question 1-1
+
+Q1 (A) – Short Answers
+
+a) ip link set eth0 up command-
+It enables (activates) the network interface eth0.
+Basically turns the interface ON so it can send/receive data.
+
+b) Detect hidden Wi-Fi networks-
+Use tools like:
+iw dev
+iwlist scan
+Wireshark / Kismet
+Hidden networks still broadcast signals; only SSID is hidden.
+
+c) Configure router interface with IP-
+enable
+configure terminal
+interface g0/0
+ip address 192.168.1.1 255.255.255.0
+no shutdown
+exit
+
+d) Purpose of assigning hostname to switch-
+Identifies the device in network
+Helps in management & troubleshooting
+Avoids confusion in multiple devices
+
+f) Ethical hacking-
+Legal hacking done to find vulnerabilities
+Used for improving security
+Done with permission
+
+g) show running-config command-
+Displays current active configuration of the device (RAM)
+Includes interfaces, IPs, passwords, protocols
+
+
+
+
+Question-2 (B) – Option 1: Ring Topology (C Program)
+
+#include <stdio.h>
+int main() {
+    int n, i;
+    printf("Enter number of nodes: ");
+    scanf("%d", &n);
+    printf("\nRing Topology Connections:\n");
+    for(i = 1; i <= n; i++) {
+        if(i == n)
+            printf("Node %d -> Node 1\n", i);
+        else
+            printf("Node %d -> Node %d\n", i, i+1);
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
