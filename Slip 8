@@ -1,0 +1,71 @@
+Q1 (A) – Short Answers
+
+a) Why configure enable password?
+Protects privileged EXEC mode (Router#)
+Prevents unauthorized configuration changes
+Without it → anyone can access full control
+
+b) Role of VLAN1 in initial configuration
+Default VLAN on switch
+Used for management (IP address assignment)
+All ports belong to VLAN1 initially
+
+c) Static NAT Configuration (1-to-1 mapping)
+Example:
+Private IP: 192.168.1.2
+Public IP: 200.1.1.1
+enable
+configure terminal
+interface g0/0
+ip address 192.168.1.1 255.255.255.0
+ip nat inside
+no shutdown
+interface g0/1
+ip address 200.1.1.2 255.255.255.0
+ip nat outside
+no shutdown
+ip nat inside source static 192.168.1.2 200.1.1.1
+
+d) Dynamic NAT with pool
+access-list 1 permit 192.168.1.0 0.0.0.255
+ip nat pool MYPOOL 200.1.1.1 200.1.1.10 netmask 255.255.255.0
+ip nat inside source list 1 pool MYPOOL
+
+f) Define Hashing
+Converts data into fixed-size value (hash)
+Used in:
+Password storage
+Data integrity
+Example: SHA, MD5
+
+g) Cyber Security Policies
+Rules to protect systems and data
+Examples:
+Password policy
+Access control policy
+Data backup policy
+Network security policy
+
+✅ Q2 (B) –Switch Initial Configuration (2960)
+
+
+enable
+configure terminal
+hostname Switch1
+line console 0
+password cisco
+login
+interface vlan 1
+ip address 192.168.1.10 255.255.255.0
+no shutdown
+
+
+
+
+
+
+
+
+
+
+
