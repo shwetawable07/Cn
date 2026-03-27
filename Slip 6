@@ -1,0 +1,49 @@
+Question 1-1
+
+a) Network device identification-
+Example: Router
+Purpose: Connects different networks
+Ports: Ethernet ports, console port
+
+b) Types of network cables-
+Cable Type	Use
+Coaxial	Cable TV, broadband
+Twisted Pair (UTP/STP)	LAN networks
+Fiber Optic	High-speed long distance
+
+c) Role of no shutdown-
+Activates interface
+Without it, interface stays disabled
+
+d) ip addr vs ifconfig-
+Feature	ip addr	ifconfig
+Modern	Yes	No
+Detailed info	More	Less
+Status	Recommended	Deprecated
+
+f) Router> to Router# mode-
+enable
+
+g) 64-bit WEP key-
+Requires 10 hexadecimal digits
+Example:
+A1B2C3D4E5
+1234567890
+ABCDEF1234
+1A2B3C4D5E
+FFFFFFFFFF
+
+
+
+Q2 (B) – Option 1: Framing (Character Count Method)
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char data[50];
+    int len;
+    printf("Enter data: ");
+    scanf("%s", data);
+    len = strlen(data);
+    printf("Framed data: %d%s\n", len, data);
+    return 0;
+}
