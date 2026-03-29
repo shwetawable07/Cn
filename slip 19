@@ -1,0 +1,85 @@
+Q1 (ANY 5)
+
+a) Static Routing + Features
+Static routing is manually configured routing.
+Features: simple, secure, no overhead, not scalable.
+
+
+b) NAT Commands
+ip nat inside
+ip nat outside
+ip nat inside source list 1 interface g0/0 overload
+access-list 1 permit 192.168.1.0 0.0.0.255
+
+
+c) Algorithm for SHA256 Password Hashing
+Take input password
+Convert to binary
+Apply padding
+Process in blocks
+Generate hash output (256-bit)
+
+
+d) Linux commands to detect hidden Wi-Fi
+iw dev
+iwlist scanning
+nmcli dev wifi list
+
+
+f) Steps to identify phishing email
+Check sender email
+Look for spelling mistakes
+Avoid unknown links
+Verify attachments
+Check urgency or fake offers
+
+
+g) Types of Cyber Threats
+Malware
+Phishing
+Ransomware
+Man-in-the-middle attack
+Denial-of-Service (DoS)
+
+
+
+Program – Phishing Simulation in C)
+
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char username[50], password[50];
+    printf("=== Login Page ===\n");
+    printf("Enter Username: ");
+    scanf("%s", username);
+    printf("Enter Password: ");
+    scanf("%s", password);
+    printf("\nLogin Failed! (Phishing Simulation)\n");
+    printf("Captured Data:\n");
+    printf("Username: %s\n", username);
+    printf("Password: %s\n", password);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
