@@ -1,0 +1,75 @@
+Q1 (Any 5)
+
+a) Switch vs Router
+Feature	           Switch          	Router
+Layer	            Data Link       	Network
+Address	           MAC	              IP
+Function     	Connect devices   	Connect networks
+
+
+b) MAC vs IP Address
+MAC Address              	IP Address
+Physical                  	Logical
+Fixed	                     Changeable
+48-bit	                  IPv4 = 32-bit
+
+
+c) Subnetting 192.168.1.0/26
+/26 → 4 subnets
+Subnets:
+192.168.1.0 – 63
+192.168.1.64 – 127
+192.168.1.128 – 191
+192.168.1.192 – 255
+Usable IPs per subnet = 62
+
+
+d) IP Classes
+Class	Range	Example
+A	1–126	10.0.0.1
+B	128–191	172.16.0.1
+C	192–223	192.168.1.1
+D	224–239	Multicast
+E	240–255	Reserved
+e) 64-bit WEP key
+64 bits = 16 hex digits
+Example:
+A1B2C3D4E5F6A7B8
+
+
+g) Alternatives to WEP
+WPA2
+WPA3
+
+
+
+Q2 B- write a c program to implement the any data link layer framing method
+
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char data[100], stuffed[200];
+    int i, j = 0;
+    printf("Enter data: ");
+    scanf("%s", data);
+    stuffed[j++] = 'F';
+    for(i = 0; i < strlen(data); i++) {
+        // If data contains flag or escape, add escape character
+        if(data[i] == 'F' || data[i] == 'E') {
+            stuffed[j++] = 'E';   // Escape character
+        }
+        stuffed[j++] = data[i];
+    }
+    stuffed[j++] = 'F';
+    stuffed[j] = '\0';
+    printf("\nStuffed Data: %s\n", stuffed);
+    printf("\n=== Code Execution Successful ===\n");
+    return 0;
+}
+
+
+
+
+
+
+
