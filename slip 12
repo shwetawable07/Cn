@@ -1,0 +1,73 @@
+Q1 (A) Any 5
+
+a) Function of a Switch
+Connects devices in LAN
+Uses MAC addresses
+Forwards frames efficiently
+
+
+b) Static IP in Linux
+sudo ip addr add 192.168.1.10/24 dev eth0
+
+
+c) ip link set eth0 up
+Enables (activates) network interface eth0
+
+
+d) ping vs traceroute
+Feature	                  ping	                traceroute
+Purpose	            Check connectivity	         Show path
+Output	                RTT	                        Hops
+Protocol            	ICMP                      	ICMP/UDP
+
+
+f) ip route show
+Displays routing table
+Shows gateways and routes
+
+
+g) Same Subnet Reason
+Enables direct communication
+Avoids need for router
+Faster data transfer
+
+
+Q2 (B) Star Topology Program (C)
+
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter number of computers in star topology: ");
+    scanf("%d", &n);
+    printf("\n----- STAR TOPOLOGY -----\n\n");
+    if(n >= 1) printf("    [PC-1]\n");
+    if(n >= 2) printf("       |\n       |\n");
+    if(n >= 2) printf("[PC-2] ---- [HUB] ---- [PC-3]\n");
+    if(n >= 4) printf("       |\n       |\n");
+    if(n >= 4) printf("    [PC-4]\n");
+    printf("\n\n=== Code Execution Successful ===\n");
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
