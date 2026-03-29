@@ -1,0 +1,116 @@
+Q1 (A) Any 5
+
+
+a) Configure PAT (NAT Overload)
+Router(config)# access-list 1 permit 192.168.1.0 0.0.0.255
+Router(config)# ip nat inside source list 1 interface fa0/1 overload
+Router(config)# interface fa0/0
+Router(config-if)# ip nat inside
+Router(config)# interface fa0/1
+Router(config-if)# ip nat outside
+
+
+b) Verify routing
+ping 8.8.8.8
+traceroute 8.8.8.8
+show ip route
+
+
+c) Privileged EXEC password
+Router(config)# enable password class
+d) Verify configurations
+show running-config
+
+
+f) Dynamic IP Advantages & Disadvantages
+Advantages:
+Easy configuration
+Automatic IP assignment
+Disadvantages:
+IP may change
+Less control/security
+
+
+g) Verify dynamic IP
+ip addr show
+
+
+Q2 (B) Static Routing Simulation (C)
+
+#include <stdio.h>
+#define MAX 10
+#define INF 999
+int main() {
+    int n, cost[MAX][MAX];
+    int i, j, k;
+    printf("Enter number of routers: ");
+    scanf("%d", &n);
+    printf("\nEnter cost matrix (enter 999 for no direct path):\n");
+    for(i = 0; i < n; i++) {
+        for(j = 0; j < n; j++) {
+            scanf("%d", &cost[i][j]);
+        }
+    }
+    for(k = 0; k < n; k++) {
+        for(i = 0; i < n; i++) {
+            for(j = 0; j < n; j++) {
+                if(cost[i][j] > cost[i][k] + cost[k][j]) {
+                    cost[i][j] = cost[i][k] + cost[k][j];
+                }
+            }
+        }
+    }
+    printf("\n--- Static Routing Table (Shortest Paths) ---\n");
+    for(i = 0; i < n; i++) {
+        printf("\nRouter %d:\n", i + 1);
+        for(j = 0; j < n; j++) {
+            if(i != j) {
+                printf("To Router %d -> Cost = %d\n", j + 1, cost[i][j]);
+            }
+        }
+    }
+
+    printf("\n=== Code Execution Successful ===\n");
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
