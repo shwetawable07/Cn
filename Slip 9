@@ -1,0 +1,84 @@
+Q1 (A) – Short Answers
+
+a) Five IP Address Classes
+Class	        Range	        Default Mask	       Example
+A            1 – 126      	255.0.0.0	          10.0.0.1
+B          	128 – 191	     255.255.0.0	       172.16.0.1
+C          	192 – 223    	255.255.255.0	       192.168.1.1
+D	          224 – 239    	 Multicast            224.0.0.1
+E	          240 – 255    	Experimental	        240.0.0.1
+
+
+b) IPv6 format + example
+128-bit address
+Written in 8 groups of 4 hex digits
+Example:
+2001:0db8:85a3:0000:0000:8a2e:0370:7334
+
+
+c) Static NAT vs Dynamic NAT vs PAT
+Feature	       Static NAT       	Dynamic NAT	      PAT (Port Address Translation) 
+Mapping      	One-to-One	       Many-to-Many          	Many-to-One
+IP usage	      Fixed           	Pool-based	         Single public IP
+Cost	         High	               Medium	                 Low
+Example    	Server hosting	    Office network    	    Home router
+
+
+d) Dynamic NAT Configuration
+enable
+configure terminal
+access-list 1 permit 192.168.1.0 0.0.0.255
+ip nat pool MYPOOL 200.1.1.1 200.1.1.10 netmask 255.255.255.0
+ip nat inside source list 1 pool MYPOOL
+
+
+f) Cyber Security
+Protection of systems, networks, and data from attacks
+Examples:
+Antivirus
+Firewall
+Encryption
+
+
+g) Ethical Hacking
+Legal hacking to find vulnerabilities
+Done with permission
+Improves system security
+
+
+Q2 (B) – Option 1: Program to Determine IP Class (C)
+
+#include <stdio.h>
+int main() {
+    int first_octet;
+    printf("Enter first octet of IP address: ");
+    scanf("%d", &first_octet);
+    if (first_octet >= 1 && first_octet <= 126)
+        printf("Class A\n");
+    else if (first_octet >= 128 && first_octet <= 191)
+        printf("Class B\n");
+    else if (first_octet >= 192 && first_octet <= 223)
+        printf("Class C\n");
+    else if (first_octet >= 224 && first_octet <= 239)
+        printf("Class D (Multicast)\n");
+    else if (first_octet >= 240 && first_octet <= 255)
+        printf("Class E (Experimental)\n");
+    else
+        printf("Invalid IP\n");
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
