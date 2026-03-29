@@ -1,0 +1,82 @@
+Q1 (ANY 5)
+
+a) Purpose of banner MOTD
+To display a warning or message before login.
+
+
+b) 64-bit WEP key
+Requires 10 hexadecimal digits
+Example: A1B2C3D4E5
+
+
+c) Types of Cyber Threats (any 2 explain)
+Malware: harmful software
+Phishing: fake emails to steal data
+
+
+d) Static vs Dynamic Routing
+Static	                  Dynamic
+Manual                  	Automatic
+No updates             	Auto updates
+Less scalable	          Highly scalable
+
+
+
+f) Function of Switch
+Connects devices and forwards data using MAC address.
+
+
+g) Network Topologies (any 2)
+Star: central hub
+Bus: single cable backbone
+
+
+Q2 (Mesh Topology – C Program)
+
+#include <stdio.h>
+int main()
+{
+int n;
+printf("Enter number of computers in mesh topology: ");
+scanf("%d", &n);
+if (n < 2)
+{
+printf("Mesh topology requires at least 2 computers.\n");
+return 0;
+}
+printf("\n----- MESH TOPOLOGY -----\n\n");
+for (int i = 1; i <= n; i++)
+{
+printf(" [PC-%d] ", i);
+}
+printf("\n\nConnections between computers:\n");
+for (int i = 1; i <= n; i++)
+{
+for (int j = i + 1; j <= n; j++)
+{
+printf("PC-%d <----> PC-%d\n", i, j);
+}
+}
+printf("\nIn Mesh Topology every computer is connected to every other
+computer.\n");
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
