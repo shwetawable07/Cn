@@ -1,0 +1,106 @@
+Q1 (A) Any 5
+
+a) Difference between Cat5e, Cat6, Cat7
+Feature          	Cat5e	            Cat6	             Cat7
+Speed	         Up to 1 Gbps	     Up to 10 Gbps    	Up to 10 Gbps+
+Bandwidth      	100 MHz	           250 MHz          	600 MHz
+Shielding	       UTP	            UTP/STP	         Fully Shielded
+Crosstalk    	Moderate           	Lower              	Very low
+Usage	     Home networks	       Offices          	Data centers
+
+
+b) Purpose of Modem
+Converts digital ↔ analog signals
+Connects computer/network to ISP
+Without modem?
+No (for DSL/Cable)
+Yes (if fiber ONT or mobile hotspot is used)
+
+
+c) Static IP in Linux
+sudo ip addr add 192.168.1.10/24 dev eth0
+
+
+d) Use of ping
+Tests network connectivity
+Measures latency (RTT)
+Detects packet loss
+
+
+f) Static NAT vs Dynamic NAT vs PAT
+
+Feature          	Static NAT	            Dynamic NAT	                  PAT
+Mapping         	One-to-One             	Pool-based               	Many-to-One
+IP usage          	High	                 Moderate              	Very efficient
+Example        	Server hosting	          Limited pool            	Home router
+
+
+g) Static NAT Configuration (Cisco)
+Router(config)# ip nat inside source static 192.168.1.10 203.0.113.5
+Router(config)# interface fa0/0
+Router(config-if)# ip nat inside
+Router(config)# interface fa0/1
+Router(config-if)# ip nat outside
+
+
+Q2 (B) Program – Even Parity
+
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char data[100];
+    int count = 0;
+    printf("Enter binary data: ");
+    scanf("%s", data);
+    for(int i = 0; i < strlen(data); i++) {
+        if(data[i] == '1') count++;
+    }
+    if(count % 2 == 0)
+        printf("Even parity bit: 0\n");
+    else
+        printf("Even parity bit: 1\n");
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
