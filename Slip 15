@@ -1,0 +1,86 @@
+Q1 (A)
+
+
+a) Router> to Router#
+enable
+
+b) 64-bit WEP key
+Requires 10 hexadecimal digits
+Examples:
+A1B2C3D4E5
+1234567890
+ABCDEF1234
+1A2B3C4D5E
+FFFFFFFFFF
+
+
+c) Dummy Phishing Email + Indicators
+Example:
+Subject: Urgent! Your account is blocked
+Click here to verify: http://fake-bank.com
+Indicators:
+Suspicious links
+Urgent language
+Unknown sender
+Grammar mistakes
+Requests for sensitive info
+
+
+d) Crack ZIP using fcrackzip
+fcrackzip -u -D -p wordlist.txt file.zip
+
+
+f) ip addr vs ifconfig
+Feature	ip addr	ifconfig
+Modern	Yes	Deprecated
+Features	More	Limited
+Usage	Recommended	Legacy
+
+
+g) Release/Renew DHCP IP
+dhclient -r
+dhclient
+
+
+Q2 - B write a c code to display mesh topology 
+#include <stdio.h>
+#define MAX 10
+int main() {
+    int n, i, j;
+    int adj[MAX][MAX];
+    printf("Enter number of nodes: ");
+    scanf("%d", &n);
+    for(i = 0; i < n; i++) {
+        for(j = 0; j < n; j++) {
+            if(i == j)
+                adj[i][j] = 0;  // No self-loop
+            else
+                adj[i][j] = 1;  // Connection exists
+        }
+    }
+    printf("\nMesh Topology (Adjacency Matrix):\n");
+    for(i = 0; i < n; i++) {
+        for(j = 0; j < n; j++) {
+            printf("%d ", adj[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
