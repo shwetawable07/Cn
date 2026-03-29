@@ -1,0 +1,86 @@
+Q1 (A) Any 5
+
+
+a) Switch vs Router
+Feature             	Switch                       	Router
+Layer	              Data Link (L2)	             Network (L3)
+Address used	       MAC Address	                IP Address
+Function	        Connect devices in LAN	   Connect different networks
+Speed	                Faster	                 Slower than switch
+Example           	Office LAN	                 Internet routing
+
+
+b) Purpose of Modem
+Converts digital ↔ analog signals
+Required for DSL/Cable internet
+Without modem:
+Not possible (DSL)
+Possible (Fiber ONT / Mobile hotspot)
+
+
+c) Types of Network Cables
+Cable	                               Use
+Twisted Pair (UTP/STP)       	LAN connections
+Coaxial Cable	               Cable TV, broadband
+Fiber Optic              	High-speed, long distance
+
+
+d) IPv4 vs IPv6
+Feature                 	IPv4	                       IPv6
+Size	                   32-bit	                      128-bit
+Format	                Decimal                    	Hexadecimal
+Example	               192.168.1.1	                 2001:db8::1
+Security               	Less	                        More secure
+Addresses             	Limited                       	Huge
+
+
+f) Subnetting + /26
+Total bits = 32
+Network bits = 26
+Host bits = 6
+
+👉 Hosts = 
+2^6−2=62
+
+g) Purpose of Hostname in Switch
+Identifies device in network
+Easier management & troubleshooting
+Appears in CLI prompt
+
+
+Q2 (B) Character Count Framing (C Program)
+
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char data[100];
+    int len;
+    printf("Enter data: ");
+    scanf("%s", data);
+    len = strlen(data);
+    printf("Framed data (Character Count Method):\n");
+    printf("%d%s\n", len + 1, data);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
