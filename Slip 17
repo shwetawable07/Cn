@@ -1,0 +1,65 @@
+Q1 (Any 5)
+
+
+a) Primary purpose of banner MOTD
+MOTD = Message of the Day
+Displays a message when a user logs into a device
+Used for security warnings / legal notices
+
+
+b) Packet Tracer benefit & limitation
+Benefit:
+Safe virtual environment to practice networking without hardware
+Limitation:
+Does not fully replicate real-world hardware behavior
+
+
+c) Difference: Static NAT vs Dynamic NAT vs PAT
+Feature                	Static NAT                	Dynamic NAT                  	PAT
+Mapping               	One-to-one	                Pool-based	               Many-to-one
+IP usage                	Fixed                     	Dynamic	                  Shared
+Example	           1 public IP per device          	Uses pool	                 Uses ports
+
+
+d) NAT commands (Cisco Packet Tracer)
+Router(config)# ip nat inside source static 192.168.1.2 200.1.1.2
+Router(config)# ip nat inside
+Router(config)# ip nat outside
+Router(config)# access-list 1 permit 192.168.1.0 0.0.0.255
+Router(config)# ip nat inside source list 1 pool NATPOOL
+
+
+e) Netstat command
+netstat
+Shows active connections
+netstat -a → all connections
+netstat -n → numeric format
+
+
+g) (Repeated) Banner MOTD
+Same as (a)
+
+
+Q2 B – C Program (Password Security)
+
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+int main() {
+    char password[50];
+    int i, hasUpper=0, hasLower=0, hasDigit=0, hasSpecial=0;
+    printf("Enter password: ");
+    scanf("%s", password);
+    int len = strlen(password);
+    for(i=0; i<len; i++) {
+        if(isupper(password[i])) hasUpper=1;
+        else if(islower(password[i])) hasLower=1;
+        else if(isdigit(password[i])) hasDigit=1;
+        else hasSpecial=1;
+    }
+    if(len >= 8 && hasUpper && hasLower && hasDigit && hasSpecial)
+        printf("Strong Password\n");
+    else
+        printf("Weak Password\n");
+    return 0;
+}
