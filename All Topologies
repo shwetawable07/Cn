@@ -1,0 +1,272 @@
+Program 1 - Write a program to display Star Topology
+
+#include <stdio.h>
+int main()
+{
+int n;
+printf("Enter number of computers in star topology: ");
+scanf("%d", &n);
+if(n < 4)
+{
+printf("For this diagram at least 4 computers required.\n");
+return 0;
+}
+printf("\n----- STAR TOPOLOGY -----\n\n");
+printf(" [PC-1]\n");
+printf(" |\n");
+printf(" |\n");
+printf("[PC-2] ---- [HUB] ---- [PC-3]\n");
+printf(" |\n");
+printf(" |\n");
+printf(" [PC-4]\n");
+return 0;
+}
+
+
+
+
+Program 2 - Write a program to displays a Ring Topology. 
+
+
+#include <stdio.h>
+int main()
+{
+int n;
+printf("Enter number of computers in ring topology: ");
+scanf("%d", &n);
+if (n < 2)
+{
+printf("Ring topology requires at least 2 computers.\n");
+return 0;
+}
+printf("\n----- RING TOPOLOGY -----\n\n");
+for (int i = 1; i <= n; i++)
+{
+printf(" [PC-%d] ", i);
+if (i != n)
+printf("---");
+}
+printf("--- [PC-1]");
+printf("\n\nAll computers are connected in a closed loop.\n");
+return 0; 
+}
+
+
+
+Program 3 - Write a program to displays a Mesh Topology. 
+
+#include <stdio.h>
+int main()
+{
+int n;
+printf("Enter number of computers in mesh topology: ");
+scanf("%d", &n);
+if (n < 2)
+{
+printf("Mesh topology requires at least 2 computers.\n");
+return 0;
+}
+printf("\n----- MESH TOPOLOGY -----\n\n"); 
+for (int i = 1; i <= n; i++)
+{
+printf(" [PC-%d] ", i);
+}
+printf("\n\nConnections between computers:\n");
+for (int i = 1; i <= n; i++)
+{
+for (int j = i + 1; j <= n; j++)
+{
+printf("PC-%d <----> PC-%d\n", i, j);
+}
+}
+printf("\nIn Mesh Topology every computer is connected to every other computer.\n");
+return 0; 
+}
+
+
+
+
+Program 4 - Write a program to displays a Tree Topology. 
+
+#include <stdio.h>
+int main( )
+{
+int n;
+printf("Enter number of computers in tree topology: ");
+scanf("%d", &n);
+if (n < 3)
+{
+printf("Tree topology requires at least 3 computers.\n");
+return 0;
+}
+printf("\n----- TREE TOPOLOGY -----\n\n");
+printf(" [ROOT]\n");
+printf(" |\n");
+printf(" -------------\n");
+printf(" | |\n");
+for(int i = 1; i <= n; i++)
+{
+printf(" [PC-%d] ", i);
+if(i % 2 == 0)
+printf(" | |\n");
+printf("\n");
+}
+printf("\n\nHierarchical structure like a tree.\n"); 
+return 0; 
+}
+
+
+
+Program 5 - Write a program to displays a Hybrid Topology.
+
+#include <stdio.h>
+int main()
+{
+int n;
+printf("Enter number of computers in hybrid topology: ");
+scanf("%d", &n);
+if (n < 4)
+{
+printf("Hybrid topology requires at least 4 computers.\n");
+return 0;
+}
+printf("\n----- HYBRID TOPOLOGY (STAR + BUS) -----\n\n");
+printf(" [PC-1]\n");
+printf(" |\n");
+printf("[PC-2] -- [HUB] -- [PC-3]\n"); 
+printf(" |\n");
+printf(" [PC-4]\n");
+printf(" |\n");
+printf(" |\n");
+printf(" --------BUS LINE--------\n");
+printf(" | | |\n");
+printf(" [PC-5] [PC-6] [PC-7]\n");
+printf("\nThis is a Hybrid Topology combining Star and Bus networks.\n"); 
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
