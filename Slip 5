@@ -41,20 +41,27 @@ Includes interfaces, IPs, passwords, protocols
 Question-2 (B) – Option 1: Ring Topology (C Program)
 
 #include <stdio.h>
-int main() {
-    int n, i;
-    printf("Enter number of nodes: ");
-    scanf("%d", &n);
-    printf("\nRing Topology Connections:\n");
-    for(i = 1; i <= n; i++) {
-        if(i == n)
-            printf("Node %d -> Node 1\n", i);
-        else
-            printf("Node %d -> Node %d\n", i, i+1);
-    }
-    return 0;
+int main()
+{
+int n;
+printf("Enter number of computers in ring topology: ");
+scanf("%d", &n);
+if (n < 2)
+{
+printf("Ring topology requires at least 2 computers.\n");
+return 0;
 }
-
+printf("\n----- RING TOPOLOGY -----\n\n");
+for (int i = 1; i <= n; i++)
+{
+printf(" [PC-%d] ", i);
+if (i != n)
+printf("---");
+}
+printf("--- [PC-1]");
+printf("\n\nAll computers are connected in a closed loop.\n");
+return 0;
+}
 
 
 
