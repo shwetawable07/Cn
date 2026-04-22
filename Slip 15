@@ -43,29 +43,34 @@ dhclient
 
 
 Q2 - B write a c code to display mesh topology 
+
 #include <stdio.h>
-#define MAX 10
-int main() {
-    int n, i, j;
-    int adj[MAX][MAX];
-    printf("Enter number of nodes: ");
-    scanf("%d", &n);
-    for(i = 0; i < n; i++) {
-        for(j = 0; j < n; j++) {
-            if(i == j)
-                adj[i][j] = 0;  // No self-loop
-            else
-                adj[i][j] = 1;  // Connection exists
-        }
-    }
-    printf("\nMesh Topology (Adjacency Matrix):\n");
-    for(i = 0; i < n; i++) {
-        for(j = 0; j < n; j++) {
-            printf("%d ", adj[i][j]);
-        }
-        printf("\n");
-    }
-    return 0;
+int main()
+{
+int n;
+printf("Enter number of computers in mesh topology: ");
+scanf("%d", &n);
+if (n < 2)
+{
+printf("Mesh topology requires at least 2 computers.\n");
+return 0;
+}
+printf("\n----- MESH TOPOLOGY -----\n\n");
+for (int i = 1; i <= n; i++)
+{
+printf(" [PC-%d] ", i);
+}
+printf("\n\nConnections between computers:\n");
+for (int i = 1; i <= n; i++)
+{
+for (int j = i + 1; j <= n; j++)
+{
+printf("PC-%d <----> PC-%d\n", i, j);
+}
+}
+printf("\nIn Mesh Topology every computer is connected to every other
+computer.\n");
+return 0;
 }
 
 
