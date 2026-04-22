@@ -35,39 +35,23 @@ Faster data transfer
 Q2 (B) Star Topology Program (C)
 
 #include <stdio.h>
-int main() {
-    int n;
-    printf("Enter number of computers in star topology: ");
-    scanf("%d", &n);
-    printf("\n----- STAR TOPOLOGY -----\n\n");
-    if(n >= 1) printf("    [PC-1]\n");
-    if(n >= 2) printf("       |\n       |\n");
-    if(n >= 2) printf("[PC-2] ---- [HUB] ---- [PC-3]\n");
-    if(n >= 4) printf("       |\n       |\n");
-    if(n >= 4) printf("    [PC-4]\n");
-    printf("\n\n=== Code Execution Successful ===\n");
-    return 0;
+int main()
+{
+int n;
+printf("Enter number of computers in star topology: ");
+scanf("%d", &n);
+if(n < 4)
+{
+printf("For this diagram at least 4 computers required.\n");
+return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+printf("\n----- STAR TOPOLOGY -----\n\n");
+printf(" [PC-1]\n");
+printf(" |\n");
+printf(" |\n");
+printf("[PC-2] ---- [HUB] ---- [PC-3]\n");
+printf(" |\n");
+printf(" |\n");
+printf(" [PC-4]\n");
+return 0;
+}
