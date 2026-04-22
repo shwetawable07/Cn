@@ -46,24 +46,40 @@ Access control policy
 Data backup policy
 Network security policy
 
-✅ Q2 (B) –Switch Initial Configuration (2960)
+✅ Q2 (B) –Ping Command
 
 
-enable
-configure terminal
-hostname Switch1
-line console 0
-password cisco
-login
-interface vlan 1
-ip address 192.168.1.10 255.255.255.0
-no shutdown
-
-
-
-
-
-
+#include <stdio.h>
+#include <stdlib.h> 
+int main()
+{
+printf("--- Network Configuration Verification Program ---\n\n");
+printf("Step 1: Fetching current running configuration...\n");
+int config_status = system("show running-config");
+if (config_status == -1)
+{
+printf("Error: Could not execute configuration command.\n");
+}
+else
+{
+printf("\nConfiguration fetch completed with status: %d\n",config_status);
+} 
+printf("\n--------------------------------------------------\n");
+char target_ip[] = "8.8.8.8";
+printf("Step 2: Pinging %s to verify connectivity...\n", target_ip);
+char ping_cmd[50];
+sprintf(ping_cmd, "ping -c 4 %s", target_ip);
+int ping_status = system(ping_cmd);
+if (ping_status == 0)
+{
+printf("\nResult: SUCCESS - Target %s is reachable.\n", target_ip);
+} 
+else 
+{
+printf("\nResult: FAILED - Target %s is unreachable.\n", target_ip);
+}
+return 0;
+}
 
 
 
