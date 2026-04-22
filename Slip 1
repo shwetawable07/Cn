@@ -20,41 +20,45 @@ g) Nmap scan for open ports-
 nmap -p- 192.168.1.1
 
 
-Q2-B-A
+OR
+Q2) B
+What is subnetting?
+Given the network address 192.168.10.0/25 (Class C): Identify the number of network bits and host bits.
+• Find the total number of subnetworks in a given network.
+• Calculate the total number of IP addresses available in each subnet.
+• Determine the total number of usable host addresses in each subnet.
+Configure the following IP address on a PC and also on a Desktop end device in Cisco Packet Tracer. Verify the configuration using appropriate commands.
+• IP Address: 192.168.1.10
+• Subnet Mask: 255.255.255.0
+• Default Gateway: 192.168.1.1
 
-#include <stdio.h>
-#include <string.h>
-void charStuffing(char data[]) {
-    printf("Character Stuffing Output: DLE STX ");
-    for(int i=0; i<strlen(data); i++) {
-        if(data[i]=='D')
-            printf("DLE ");
-        printf("%c ", data[i]);
-    }
-    printf("DLE ETX\n");
-}
-void bitStuffing(char data[]) {
-    int count=0;
-    printf("Bit Stuffing Output: ");
-    for(int i=0; i<strlen(data); i++) {
-        printf("%c", data[i]);
-        if(data[i]=='1') {
-            count++;
-            if(count==5) {
-                printf("0");
-                count=0;
-            }
-        } else {
-            count=0;
-        }
-    }
-}
-int main() {
-    char data[50];
-    printf("Enter data: ");
-    scanf("%s", data);
 
-    charStuffing(data);
-    bitStuffing(data);
-    return 0;
+Subnetting:
+
+Subnetting is the process of dividing a large network into smaller networks (subnets) to:
+
+Improve performance
+Increase security
+Use IP addresses efficiently
+
+
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+int ip1,ip2,ip3,ip4;
+int prefix, host_bits, hosts;
+printf("Enter IP Address (x.x.x.x): ");
+scanf("%d.%d.%d.%d",&ip1,&ip2,&ip3,&ip4);
+printf("Enter CIDR prefix: ");
+scanf("%d",&prefix);
+host_bits = 32 - prefix;
+hosts = pow(2, host_bits) - 2;
+printf("\nIP Address : %d.%d.%d.%d/%d\n",ip1,ip2,ip3,ip4,prefix);
+printf("Network ID : %d.%d.%d.0\n",ip1,ip2,ip3);
+printf("Broadcast Address : %d.%d.%d.255\n",ip1,ip2,ip3);
+printf("Usable Hosts : %d\n",hosts);
+return 0;
 }
+
+
